@@ -1,27 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
-
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #0f1014; /* puhutv arka plan rengi */
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Film Kartları */
+
+
 .movie-card-sm {
-    background: #fff;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid #ddd;
-    transition: 0.2s;
+    background: transparent;
+    border: none;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .movie-card-sm:hover {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: scale(1.05);
 }
 
 .poster-wrapper {
     position: relative;
     aspect-ratio: 2/3;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .poster-wrapper img {
@@ -30,24 +32,23 @@ body {
     object-fit: cover;
 }
 
-/* Sinemalar Puan Kutusu */
+.movie-title-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: block;
+    margin-top: 10px;
+}
+
 .score-box {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    background: rgba(255, 193, 7, 0.9);
-    color: #000;
-    padding: 2px 8px;
-    font-weight: 700;
-    font-size: 14px;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffc107;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 12px;
 }
-
-.movie-title-link {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #333;
-    text-decoration: none;
-    display: block;
-    margin-top: 8px;
-}
-
