@@ -11,10 +11,10 @@ Scrollbar Özelleştirmesi: Uzun film özetleri için kutu içerisinde özel kay
 [Canlı demoyu görmek için buraya tıklayın](https://github.com/mustafaugur1991-cmyk/Film_izleme_uygulamasi.git)
 
 ## Kullanılan Teknolojiler
-**HTML5, CSS3, JavaScript (ES6+)**
-**Framework/Library: React**
-**Bootstrap 4.5 & CSS Grid/Flexbox** 
-**VS Code, Git, GitHub**
+TML5, CSS3, JavaScript (ES6+)
+Framework/Library: React
+Bootstrap 4.5 & CSS Grid/Flexbox 
+VS Code, Git, GitHub
 
 ## Kurulum ve Çalıştırma
 Projeyi yerel makinenizde çalıştırmak için şu adımları izleyin:
