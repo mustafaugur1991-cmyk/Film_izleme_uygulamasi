@@ -1,54 +1,194 @@
+/* --- 1. Sayfa Genel --- */
 body {
-    background-color: #0f1014; /* puhutv arka plan rengi */
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
+    background-color: #1a1d20;
+    padding-top: 70px;
 }
 
-
-
-.movie-card-sm {
+/* --- 2. Kart Genel Yapısı ve Animasyonlar --- */
+.card {
     background: transparent;
     border: none;
-    transition: transform 0.3s ease;
-    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.movie-card-sm:hover {
+/* Kart Hover (Genel) */
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+/* Resim Ayarları ve Hover Efekti */
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
+    filter: brightness(0.8) contrast(1.1);
+}
+
+/* --- 3. Kart İçeriği (Yazılar ve Rozetler) --- */
+.card-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.card:hover .card-title {
+    color: #ffc107;
+}
+
+.imdb-badge {
+    background-color: #ffc107;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* --- 4. Kaydırma Çubukları (Scrollbar) --- */
+
+/* Kutu İçi Küçük Scrollbar */
+.desc-scroll {
+    height: 45px;
+    overflow-y: auto;
+    font-size: 0.72rem;
+    color: #999;
+    line-height: 1.3;
+}
+
+.desc-scroll::-webkit-scrollbar { 
+    width: 3px; 
+}
+
+.desc-scroll::-webkit-scrollbar-thumb { 
+    background: #444; 
+    border-radius: 10px; 
+}
+
+.navbar.fixed-top {
+    top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Ana Film Açıklama Scrollbar (Görünür Tasarım) */
+.movie-description {
+    height: 180px;
+    overflow-y: scroll;
+    padding-right: 15px;
+    color: #333;
+    font-size: 1.05rem;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #eee;
+}
+
+/* Webkit (Chrome/Safari) için Detaylı Scrollbar */
+.movie-description::-webkit-scrollbar { 
+    width: 8px; 
+    display: block; 
+}
+
+.movie-description::-webkit-scrollbar-track { 
+    background: #f1f1f1; 
+    border-radius: 10px; 
+}
+
+.movie-description::-webkit-scrollbar-thumb { 
+    background: #555; 
+    border-radius: 10px; 
+    border: 2px solid #f1f1f1; 
+}
+
+.movie-description::-webkit-scrollbar-thumb:hover { 
+    background: #222; 
+}
+
+/* --- 5. Popüler Filmler Alanı (Özel Efektler) --- */
+.popular-section-title {
+    color: #ffc107;
+    border-left: 4px solid #ffc107;
+    padding-left: 15px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#popular-movie-list .card {
+    background-color: #212529;
+    border: 1px solid #333;
+}
+
+#popular-movie-list .card:hover {
+    border-color: #ffc107;
+    box-shadow: 0 12px 25px rgba(255, 193, 7, 0.15);
+}
+
+/* Popüler Kart Animasyonu */
+#popular-movie-list .badge {
+    animation: pulse-yellow 2s infinite;
+}
+
+/* Footer Genel Alanı */
+.footer-section {
+    background-color: #212529; /* Tam siyah arka plan */
+    padding: 40px 0 20px 0;
+    color: #fff;
+    margin-top: 50px;
+}
+
+/* Sosyal Medya İkonları */
+.social-links a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.7;
+}
+
+/* Mağaza Butonları */
+.store-link img {
+    height: 40px; /* Buton yüksekliği */
+    transition: transform 0.3s ease;
+}
+
+.store-link:hover img {
     transform: scale(1.05);
 }
 
-.poster-wrapper {
-    position: relative;
-    aspect-ratio: 2/3;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+/* Ayırıcı Çizgi */
+.footer-divider {
+    border-top: 1px solid #f4f2f2;
+    margin: 30px 0;
 }
 
-.poster-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* Telif Hakkı Yazısı */
+.footer-bottom p {
+    font-size: 14px;
+    color: #ccc;
+    margin: 0;
 }
 
-.movie-title-link {
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    display: block;
-    margin-top: 10px;
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .social-links, .app-buttons {
+        justify-content: center;
+    }
 }
 
-.score-box {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #ffc107;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 12px;
+@keyframes pulse-yellow {
+    0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(255, 193, 7, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
 }
