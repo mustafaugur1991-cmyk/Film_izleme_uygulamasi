@@ -12,7 +12,7 @@ Scrollbar Özelleştirmesi: Uzun film özetleri için kutu içerisinde özel kay
 
 ## Kullanılan Teknolojiler
 HTML5, CSS3, JavaScript (ES6+)
-Framework/Library: React
+React
 Bootstrap 4.5 & CSS Grid/Flexbox 
 VS Code, Git, GitHub
 
