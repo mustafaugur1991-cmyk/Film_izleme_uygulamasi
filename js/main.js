@@ -45,7 +45,7 @@ const movies = [
         time: "148 dk", 
         imdb: "8.2", 
         img: "images/afis4.jpg", 
-        desc: "Örümcek-Adam Eve Dönüş Yok, kimliği açığa Örümcek-Adam'ın, sırrını geri vermesi için Doktor Strange'den yardım istemesiyle birlikte yaşananları konu ediyor. Örümcek-Adam'ın kimliği ifşa edilerek onun ve sevdiklerinin hayatı, halkın gözü önüne serilir. Kendisini büyük bir kaosun ortasında bulan Peter, aynı zamanda suç ortakları olarak lanse edilen MJ ve Ned'in hayatının da olumsuz etkilenmesine şahit olur. Arkadaşların üniversiteye girme şanslarının yok olmasına seyirci kalmak istemeyen Peter, sırrını geri vermesi için Doktor Strange'den yardım ister. Peter'ın yakarışından etkilenip ona yardım etmeyi kabul eden Strange, Unutma Büyüsü'nü yapmaya başlar. Ancak bu büyü, MJ, Ned, May ve Happy'nin de Örümcek-Adam'ın kim olduğunu unutmasına neden olacaktır. Arkadaşlarının kim olduğunu hatırlamasını, diğer kişilerin unutmasını isteyen Peter, Strange büyüyü yaparken parametreleri değiştirir. Ancak bu durum beklenmedik olaylara neden olur.", 
+        desc: "Kimliği açığa Örümcek-Adam'ın, sırrını geri vermesi için Doktor Strange'den yardım istemesiyle birlikte yaşananları konu ediyor. Örümcek-Adam'ın kimliği ifşa edilerek onun ve sevdiklerinin hayatı, halkın gözü önüne serilir. Kendisini büyük bir kaosun ortasında bulan Peter, aynı zamanda suç ortakları olarak lanse edilen MJ ve Ned'in hayatının da olumsuz etkilenmesine şahit olur. Arkadaşların üniversiteye girme şanslarının yok olmasına seyirci kalmak istemeyen Peter, sırrını geri vermesi için Doktor Strange'den yardım ister. Peter'ın yakarışından etkilenip ona yardım etmeyi kabul eden Strange, Unutma Büyüsü'nü yapmaya başlar. Ancak bu büyü, MJ, Ned, May ve Happy'nin de Örümcek-Adam'ın kim olduğunu unutmasına neden olacaktır. Arkadaşlarının kim olduğunu hatırlamasını, diğer kişilerin unutmasını isteyen Peter, Strange büyüyü yaparken parametreleri değiştirir. Ancak bu durum beklenmedik olaylara neden olur.", 
         trailer: "https://www.youtube.com/embed/JfVOs4VSpmA" 
     },
     { 
@@ -261,6 +261,10 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="position-relative shadow rounded overflow-hidden mb-3">
                                 <img src="${movie.img}" class="img-fluid w-100" alt="${movie.title}">
                                 <span class="position-absolute bottom-0 end-0 bg-dark bg-opacity-75 text-white px-2 m-2 small">${movie.time}</span>
+                                <div class="position-absolute top-0 end-0 d-flex gap-1 m-1">
+                                    <span class="bg-warning text-dark px-2 rounded" style="font-size: 0.8rem;">4K</span>
+                                    <span class="bg-dark text-white px-2 rounded" style="font-size: 0.8rem;">HD</span>
+                                </div>
                             </div>
                             <button class="btn btn-secondary w-100 fw-bold shadow-sm py-2 mb-3" onclick="window.scrollTo(0,document.body.scrollHeight)">Fragmanı İzle</button>
                             <button class="btn btn-outline-danger w-100 fw-bold py-2" onclick="addToFavorites(${movie.id})">❤ Favorilere Ekle</button>
