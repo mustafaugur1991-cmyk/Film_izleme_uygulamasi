@@ -1,4 +1,4 @@
-// --- 1. TÜM FİLM VERİLERİ (İçerikler Aynen Korundu) ---
+// --- 1. Tüm film verileri ---
 const movies = [
     { 
         id: 1, 
@@ -72,7 +72,7 @@ const movies = [
         desc: "Başrolünde Tom Hardy ve yanında Charlize Theron, Nicholas Hoult gibi isimlerin rol aldığı filmin yönetmenliğini de yapan George Miller yanında Brendan McCharty ve Nick Lathouris ikilisi ile senaryosunu yazmıştır. Merakla ve ilgiyle gelişini takip eden seyircilerle 2015 yılında ekranlara gelerek buluşan Mad Max: Fury Road (Çılgın Max: Öfkeli Yollar) filmi, nükleer savaşın ardından devasa bir çöl haline gelmiş, susuzluğun zirvede olduğu ve aynı sebeplerden dolayı da insanlığın ve yıllar boyunca kurulan medeni anlayışın çöktüğü distopik bir dünyayı ekranlara getiriyor. Hayatta kalma yeteneği ve dürtüsü, yaşadığı hayatından dolayı çok yüksek seviyede olan Max, karısını ve çocuğunu kaybettikten sonra huzuru aramaktadır ancak bir gün Savaş Çocukları tarafından esir alınır ve merkezlerine götürülür. Savaş Çocuklarının olduğu gibi bölgedeki su ve benzin gibi önemli kaynakların kontrolünü elinde tutan Ölümsüz Joe isimli acımasız ve vahşi lider için kan torbası olarak görev gören Max, buradan kaçmanın yollarını arayacaktır.", 
         trailer: "https://www.youtube.com/embed/hEJnMQG9ev8" 
     },
-    // --- POPÜLER FİLMLER (7-12) ---
+    // --- Popüler filmler ---
     {   id: 7, 
         title: "Oppenheimer", 
         category: "Dram", 
@@ -138,7 +138,7 @@ const movies = [
         trailer: "https://www.youtube.com/embed/qtRKdVHc-cE"
     },
 
-    // --- VİZYONDAKİ FİLMLER (13-18) ---
+    // --- Vizyondaki filmler ---
     {   id: 13, 
         title: "Deadpool & Wolverine", 
         category: "Aksiyon", 
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const movieDetail = document.getElementById('movie-detail');
     const favList = document.getElementById('fav-list');
 
-    // Standart Kart Şablonu (Ana Sayfa)
+    // Standart kart şablonu (AnaSayfa)
     const renderCard = (movie) => `
         <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4"> 
             <div class="card h-100 border-0 shadow bg-dark text-white" onclick="goToDetail(${movie.id})" style="cursor: pointer;">
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>`;
 
-    // Dağıtım Mantığı
+    // Dağıtım mantığı
     if (movieList) {
         movies.slice(0, 6).forEach(movie => movieList.innerHTML += renderCard(movie));
     }
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
         movies.slice(12, 18).forEach(movie => theatersList.innerHTML += renderCard(movie));
     }
 
-    // Detay Sayfası Tasarımı
+    // Detay sayfası tasarımı
     if (movieDetail) {
         const urlParams = new URLSearchParams(window.location.search);
         const movieId = urlParams.get('id');
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- FAVORİLER SAYFASI (Kaldır Butonu Eklenmiş) ---
+    // --- Favoriler sayfası ---
     if (favList) {
         const favorites = JSON.parse(localStorage.getItem('favMovies')) || [];
         const favMovies = movies.filter(movie => favorites.includes(movie.id));
@@ -338,13 +338,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// --- TÜM FİLMLER SAYFASI LİSTELEME ---
+// --- Tüm filmler sayfası ---
 const allMoviesList = document.getElementById('all-movies-list');
 
 if (allMoviesList) {
-    allMoviesList.innerHTML = ""; // Sayfa temizliği
+    allMoviesList.innerHTML = "";
     
-    // slice kullanmıyoruz, çünkü movies dizisindeki 18 içeriğin tamamını istiyoruz
     movies.forEach(movie => {
         allMoviesList.innerHTML += `
             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4"> 
@@ -362,7 +361,6 @@ if (allMoviesList) {
     });
 }   
 
-// YARDIMCI FONKSİYONLAR
 function goToDetail(id) { window.location.href = `product.html?id=${id}`; }
 
 function addToFavorites(id) {
