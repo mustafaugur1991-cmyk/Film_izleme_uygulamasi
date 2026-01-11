@@ -11,7 +11,7 @@ Scrollbar Özelleştirmesi: Uzun film özetleri için kutu içerisinde özel kay
 [Canlı demoyu görmek için buraya tıklayın](https://github.com/mustafaugur1991-cmyk/Film_izleme_uygulamasi.git)
 
 ## Kullanılan Teknolojiler
-TML5, CSS3, JavaScript (ES6+)
+HTML5, CSS3, JavaScript (ES6+)
 Framework/Library: React
 Bootstrap 4.5 & CSS Grid/Flexbox 
 VS Code, Git, GitHub
@@ -19,13 +19,13 @@ VS Code, Git, GitHub
 ## Kurulum ve Çalıştırma
 Projeyi yerel makinenizde çalıştırmak için şu adımları izleyin:
 
-### Projeyi klonlayın: git clone https://github.com/mustafaugur1991/Film_izleme_uygulamasi.git
+Projeyi klonlayın: git clone https://github.com/mustafaugur1991/Film_izleme_uygulamasi.git
 
-### Proje dizinine gidin: cd Film_izleme_uygulamasi
+Proje dizinine gidin: cd Film_izleme_uygulamasi
 
-### Gerekli paketleri yükleyin: npm install
+Gerekli paketleri yükleyin: npm install
 
-### Uygulamayı başlatın: npm start
+Uygulamayı başlatın: npm start
 
 ## Ekran Görüntüsü
 ![Screenshot](./images/Screenshot-Anasayfa.png)
